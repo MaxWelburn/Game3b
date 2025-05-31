@@ -55,10 +55,6 @@ class Platformer extends Phaser.Scene {
         this.cameras.main.setDeadzone(50, 50);
         this.cameras.main.setZoom(this.SCALE);
 
-        
-
-
-
         this.runSound = this.sound.add('run', {
             loop: true,
             volume: 0.2
@@ -84,90 +80,7 @@ class Platformer extends Phaser.Scene {
             volume: 0.2
         });
         this.deathSound.stop();
-        // // one-shot effects
-        // this.sfx = {
-        //     jump : this.sound.add('run'),
-        //     death: this.sound.add('run')
-        // };
-
-
-
-        // this.input.on('pointerdown', (pointer) => {
-        //     const worldPoint = pointer.positionToCamera(this.cameras.main);
-
-        //     // swap groundLayer for whatever layer you’re probing
-        //     const tile = this.flagLayer.getTileAtWorldXY(worldPoint.x, worldPoint.y);
-
-        //     if (tile) {
-        //         console.log(`tileX:${tile.x}  tileY:${tile.y}  index:${tile.index}`);
-        //     } else {
-        //         console.log('No tile here');
-        //     }
-        // });
-
-
-
-
-
-
-
-
-
-
-
-        // this.platforms = [
-        //     { layer: this.groundLayer, x: 30, y: 9 },
-        //     { layer: this.groundLayer, x: 37, y: 9 }
-        // ];
-        // this.movingPlatforms = this.physics.add.group({
-        //     allowGravity: false,
-        //     immovable: true
-        // });
-        // this.platforms.forEach(info => {
-        //     const tile = info.layer.getTileAt(info.x, info.y);
-        //     if (!tile) { return; }
-        //     const worldX = tile.getCenterX();
-        //     const worldY = tile.getCenterY();
-        //     info.layer.removeTileAt(info.x, info.y);
-        //     this.movingPlatforms.create(worldX, worldY, tileset.name, tile.index - this.tileset.firstgid)
-        //         .setOrigin(0.5)
-        //         .setDepth(tile.y);
-        // });
-        // this.physics.add.collider(my.sprite.player, this.movingPlatforms);
-        // const [p1, p2] = this.movingPlatforms.getChildren();
-        // this.tweens.add({
-        //     targets: p1,
-        //     x: '+=50',
-        //     duration: 2500,
-        //     ease: 'Sine.easeInOut',
-        //     yoyo: true,
-        //     repeat: -1
-        // });
-        // this.tweens.add({
-        //     targets: p2,
-        //     x: '-=50',
-        //     duration: 2500,
-        //     ease: 'Sine.easeInOut',
-        //     yoyo: true,
-        //     repeat: -1
-        // });
-        // this.events.on('update', () => {
-        //     this.movingPlatforms.children.iterate(p => p.body.updateFromGameObject());
-        // });
-
-
-
-        this.add.text(0, 0, 'Hello World', { fontFamily: 'Georgia, "Goudy Bookletter 1911", Times, serif' });
-
-
-
-
-        // this.coinsLayer.forEachTile(
-        //     (tile) => {
-        //         console.log(tile.index);
-        //     }
-        // )
-
+        
         cursors = this.input.keyboard.createCursorKeys();
         this.input.keyboard.on('keydown-D', () => {
             this.physics.world.drawDebug = this.physics.world.drawDebug ? false : true
